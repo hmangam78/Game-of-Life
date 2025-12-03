@@ -6,34 +6,34 @@
 /*   By: hgamiz-g <hgamiz-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 09:56:15 by hgamiz-g          #+#    #+#             */
-/*   Updated: 2025/12/03 13:51:31 by hgamiz-g         ###   ########.fr       */
+/*   Updated: 2025/12/03 22:08:18 by hgamiz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/gol.h"
 
-char    *pick_preset(int selection)
+char	*pick_preset(int selection)
 {
-    switch (selection)
-    {
-        case 1:
-        {
-            return ("ssssssssssssssssddddddddddddddddddddddddddddddddddddxddx");
-        }
-        case 2:
-        {
-            return ("sssddddxxsdxxsaaxddx");
-        }
-        case 3:
-        {
-            return ("ssssssssssssssssssssssssdddddddddddddddddddddddddddddddddxxdddxxsaaaaaaxdddddddx");
-        }
-        case 4:
-        {
-            return ("ssssssssssssssssssssdddddddddddddddddddddddddddddddddxdddddddddx");
-        }
-    }
-    return ("");
+	switch (selection)
+	{
+		case 1:
+		{
+			return ("ssssssssssssssssddddddddddddddddddddddddddddddddddddxddx");
+		}
+		case 2:
+		{
+			return ("sssddddxxsdxxsaaxddx");
+		}
+		case 3:
+		{
+			return ("ssssssssssssssssssssssssdddddddddddddddddddddddddddddddddxxdddxxsaaaaaaxdddddddx");
+		}
+		case 4:
+		{
+			return ("ssssssssssssssssssssdddddddddddddddddddddddddddddddddxdddddddddx");
+		}
+	}
+	return ("");
 }
 
 float   change_speed(void)

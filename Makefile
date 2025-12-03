@@ -6,7 +6,7 @@
 #    By: hgamiz-g <hgamiz-g@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/03 10:00:00 by hgamiz-g          #+#    #+#              #
-#    Updated: 2025/12/03 13:48:54 by hgamiz-g         ###   ########.fr        #
+#    Updated: 2025/12/03 22:09:26 by hgamiz-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ OBJ_DIR	= obj
 # ══════════════════════════════════════════════════════════════════════════════
 SRCS	= $(SRC_DIR)/gol.c \
 		  $(SRC_DIR)/helpers.c \
-		  $(SRC_DIR)/presets.c
+		  $(SRC_DIR)/presets.c \
+		  $(SRC_DIR)/main_menu.c
 
 OBJS	= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
