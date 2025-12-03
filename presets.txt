@@ -1,0 +1,20 @@
+# Block (still life - estable)
+echo "sssssddddddxdxsaxdx" | ./gol 15 20
+
+# Blinker (oscilador período 2)
+echo "sssssddddddxddx" | ./gol 15 20
+
+# Glider (nave espacial - se mueve en diagonal)
+echo "sssddddxxsdxxsaaxddx" | ./gol 25 40
+
+# Línea de 10 (evoluciona a patrón complejo)
+echo "ssssssssssddddddddddxdddddddddx" | ./gol 25 35
+
+# Glider grande (nave espacial en canvas grande)
+echo "ssssssssssssssssssssdddddddddddddddddddddddddxxsdxxsaaxddx" | ./gol 50 80
+
+# Acorn (evoluciona a patrón caótico complejo)
+echo "ssssssssssssssssssssssssdddddddddddddddddddddddddddddddddxxdddxxsaaaaaaxdddddddx" | ./gol 50 80
+
+# Dos bloques (estructuras estables separadas)
+echo "sssssssssddddddddddddddddddddddddxdxsaxdxddddddddddddddddddddddddddddddxdxsaxdx" | ./gol 40 80
