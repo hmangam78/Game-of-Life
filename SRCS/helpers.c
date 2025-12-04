@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgamiz-g <hgamiz-g@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: hgamiz-g <hgamiz-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 13:10:40 by hgamiz-g          #+#    #+#             */
-/*   Updated: 2025/12/03 22:07:15 by hgamiz-g         ###   ########.fr       */
+/*   Updated: 2025/12/04 09:06:33 by hgamiz-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 void	init_board(int height, int width, int board[height][width], char *pattern)
 {
+	int x = 0;
+	int y = 0;
+	bool pen_down = 0;
+
 	for (int j = 0; j < height; j++)
 	{
 		for (int i = 0; i < width; i++)
 			board[j][i] = 0;
 	}
-	int x = 0;
-	int y = 0;
-	bool pen_down = 0;
 	for (int i = 0; pattern[i] != '\0'; i++)
 	{
 		if (pattern[i] == 'x')
@@ -35,7 +36,7 @@ void	init_board(int height, int width, int board[height][width], char *pattern)
 		else if ((pattern[i] == 'd') && (x < (width - 1)))
 			x += 1;
 		if (pen_down)
-			board[y][x] = 1;        
+			board[y][x] = 1;
 	}
 }
 
@@ -51,7 +52,7 @@ void	print_board(int height, int width, int board[height][width])
 				putchar('0');
 		}
 		putchar('\n');
-	} 
+	}
 }
 
 char	*read_pattern(void)
@@ -63,7 +64,7 @@ char	*read_pattern(void)
 
 	input = malloc(sizeof(char));
 	if (!input)
-		return NULL;
+		return (NULL);
 	while ((bytes_read = read(STDIN_FILENO, &c, 1)) > 0)
 	{
 		char	*tmp;
@@ -136,7 +137,7 @@ void	simulation(int height, int width, int board[height][width])
 				}
 				default:
 				{
-					new_board[j][i] = 0;   
+					new_board[j][i] = 0;
 				}
 			}
 		}
