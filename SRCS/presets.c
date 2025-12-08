@@ -66,6 +66,31 @@ int	change_iter(void)
 	return (selection);
 }
 
+void	run_simulation(int height, int width, int board[height][width])
+{
+	char	c;
+
+	system("clear");
+	printf("-------------Game of Life-------------\n");
+	print_board(height, width, board);
+	printf("Remaining iterations: %i\n", iterations);
+	while ((c = getchar()) != '\n');
+	printf("Press Enter to start the simulation: ");
+	while ((c = getchar()) != '\n');
+	
+	for (int i = 0; i < iterations ; i++)
+	{
+		system("clear");
+		printf("-------------Game of Life-------------\n");
+		simulation(height, width, board);
+		print_board(height, width, board);
+		printf("Remaining iterations: %i\n", iterations - i);
+		usleep(500000 * (1 / speed));
+	}
+	printf("Press Enter to go back: ");
+	while ((c = getchar()) != '\n');
+}
+
 void	sim_preset(int height, int width, int board[height][width])
 {
 	int selection = 0;

@@ -34,16 +34,6 @@ int	main_menu(int height, int width, int board[height][width])
 	return (selection);
 }
 
-void	run_custom(int height, int width, int board[height][width])
-{
-	(void)height;
-	(void)width;
-	(void)board;
-	system("clear");
-	printf("Run custom\n");
-	usleep(2000000);
-}
-
 void	menu_loop(int height, int width, int board[height][width])
 {
 	int	selection = 0;

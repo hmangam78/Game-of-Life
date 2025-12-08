@@ -13,6 +13,7 @@
 #include "../includes/gol.h"
 
 float	speed = SPEED;
+int		iterations = ITERATIONS;
 
 int	main(void)
 {
