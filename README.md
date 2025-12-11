@@ -66,12 +66,12 @@ Enter one of the following options:
 >>>>> 
 ```
 
-| Option | Description                       |
-| ------ | --------------------------------- |
-| 1      | Select a predefined pattern       |
-| 2      | Draw a custom pattern *(pending)* |
-| 3      | Change simulation speed           |
-| 4      | Exit the program                  |
+| Option | Description                           |
+| ------ | ------------------------------------- |
+| 1      | Select a predefined pattern           |
+| 2      | Draw a custom pattern interactively   |
+| 3      | Change simulation speed               |
+| 4      | Exit the program                      |
 
 ### 🎨 Presets Menu
 
@@ -112,6 +112,39 @@ Choose an option:
 | 3      | Set the number of iterations               |
 | 4      | Return to main menu                        |
 
+### 🎨 Custom Pattern Drawing Mode
+
+The custom drawing mode allows you to create your own patterns interactively:
+
+```
+-------------Game of Life-------------
+Controls: arrows=move, space=toggle pen, c=clear cell, p=save
+
+█ . . . . . . . . .
+. . . . . . . . . .
+. . . . . . . . . .
+```
+
+#### Controls:
+
+| Key | Action |
+| --- | --- |
+| **Arrow Keys (↑↓←→)** | Move the cursor around the grid |
+| **Spacebar** | Toggle the "pen" - draw/erase cells |
+| **c** | Clear the current cell |
+| **p** | Save the pattern and proceed to simulation options |
+
+#### Workflow:
+
+1. Select **Option 2** from the main menu to access custom drawing
+2. Use arrow keys to navigate the grid
+3. Press **Spacebar** to toggle the pen on/off (drawing mode)
+4. Move the cursor to draw your pattern
+5. Press **c** to clear individual cells
+6. Press **p** when finished to save your pattern
+7. Choose to run the simulation or adjust speed/iterations
+8. Return to main menu
+
 ---
 
 ## ✅ Working Features
@@ -121,19 +154,20 @@ Choose an option:
 - [x] Application of Conway's 4 rules
 - [x] Terminal visualization with ASCII characters
 - [x] Interactive main menu
-- [x] Predefined pattern selection (Blinker, Glider, Acorn)
+- [x] Predefined pattern selection (Blinker, Glider, Acorn, Complex)
+- [x] **Custom pattern drawing mode with interactive editor**
+- [x] Real-time responsive cursor control (arrow keys)
 - [x] Simulation speed configuration
 - [x] Number of iterations configuration
-- [x] Drawing system with "pen" (wasd + x to toggle)
 
 ---
 
 ## 🔧 Pending Implementation
 
-- [ ] **Custom drawing mode**: Allow the user to manually draw patterns using wasd keys to move and x to paint
 - [ ] **More presets**: Add classic patterns like Pulsar, Gosper Glider Gun, LWSS
 - [ ] **Pause/Resume**: Control simulation in real time
 - [ ] **Statistics**: Show current generation, population, etc.
+- [ ] **Pattern saving/loading**: Save custom patterns to files
 
 ---
 
@@ -154,9 +188,11 @@ Board dimensions and default speed are defined in `includes/gol.h`:
 ```
 gameoflife/
 ├── SRCS/
-│   ├── gol.c        # Main and main menu
+│   ├── gol.c        # Main program and initialization
+│   ├── main_menu.c  # Main menu interface
 │   ├── helpers.c    # Simulation and drawing functions
-│   └── presets.c    # Predefined patterns and preset menus
+│   ├── presets.c    # Predefined patterns and preset menus
+│   └── custom.c     # Custom pattern drawing mode
 ├── includes/
 │   └── gol.h        # Header with definitions and prototypes
 ├── Makefile
